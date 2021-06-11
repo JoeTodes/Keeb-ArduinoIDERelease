@@ -56,18 +56,18 @@ pin5  --------┴-----------│-------┘           │
                            │    ________       │
                            │   │  "5"  │-►|—-┤
                            │    --------       │
-pin5  ---------------------│----—--┘          │
+pin6  ---------------------│----—--┘          │
           _________        │    __________     │
          │ Vol Up  │-►|--┘   │ VolDown │-►|-┘
           ---------             -----------
-pin5  --------┴--------------------┘
+pin7  --------┴--------------------┘
 
 Use an empty button ( Key() ) for gaps in rows
 */
 
 // List all keys one row after another
-std::vector<Key> keys = { Key(openCalc), Key(),      Key(MEDIA_VOLUME_UP),
-                          Key(KEY_A),    Key(KEY_5), Key(MEDIA_VOLUME_DOWN) };
+std::vector<Key> keys = { Key(openCalc), Key(KEY_A),           Key(),
+  Key(KEY_5),    Key(MEDIA_VOLUME_UP), Key(MEDIA_VOLUME_DOWN };
 // List the row pins in the same order as the keys list
 std::vector<int> rowPins = { 5, 6, 7 };
 // List the column pins in the same order as the keys list
@@ -85,7 +85,7 @@ Knob knobs[] = {
 // Allowed pins are 4,6,8,9,10,18,19,20,21
 // Default behaviour is as volume control
 Slider sliders[] = {
-  Slider(10),
+  //Slider(10),
 };
 
 

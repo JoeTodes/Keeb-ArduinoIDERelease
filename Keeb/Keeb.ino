@@ -8,11 +8,13 @@ Encoder
 HID-Project
 ArduinoSTL
 -----
+
+You will also need to use the Boards Manager to ensure you have version 1.8.2 (not the most recent) of the standard AVR boards
 */
-#include <Arduino.h>
+
 #include "Button.h"
-#include <Encoder.h>
-#include <HID-Project.h>
+#include "Encoder.h"
+#include "HID-Project.h"
 #include "Key.h"
 #include "Knob.h"
 #include "Matrix.h"
@@ -65,9 +67,14 @@ pin7  --------┴--------------------┘
 Use an empty button ( Key() ) for gaps in rows
 */
 
-// List all keys one row after another
-std::vector<Key> keys = { Key(openCalc), Key(KEY_A),           Key(),
-  Key(KEY_5),    Key(MEDIA_VOLUME_UP), Key(MEDIA_VOLUME_DOWN };
+//If not using a matrix, keys 
+
+// List all keys one column after another
+std::vector<Key> keys = { 
+  Key() //If not using matrix, keys needs to have just a single empty key like this
+  //Key(openCalc), Key(),   Key(MEDIA_VOLUME_UP),
+  //Key(KEY_A),    Key(KEY_5), Key(MEDIA_VOLUME_DOWN 
+  };
 // List the row pins in the same order as the keys list
 std::vector<int> rowPins = { 5, 6, 7 };
 // List the column pins in the same order as the keys list
